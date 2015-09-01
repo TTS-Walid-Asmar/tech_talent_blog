@@ -15,7 +15,7 @@
  */
 
 body{
-  background-color: blue;
+  background-color: #0B4C5F;
 
 }
 
@@ -23,6 +23,10 @@ body{
   display: none;
 }
 
-.wally{
+.container{
   background: rgba(250, 250, 250, .8);
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  border-radius: 10px;
 }

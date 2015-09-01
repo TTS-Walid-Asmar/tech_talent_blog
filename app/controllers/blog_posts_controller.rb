@@ -12,7 +12,14 @@ class BlogPostsController < ApplicationController
   def show
     @comment = Comment.new
   end
-
+  
+  def your_posts
+  end
+ 
+  def user_posts
+    @user = User.find(params[:id])
+  end
+  
   # GET /blog_posts/new
   def new
     @blog_post = BlogPost.new
@@ -70,6 +77,6 @@ class BlogPostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_post_params
-      params.require(:blog_post).permit(:title, :author, :blog_entry)
+      params.require(:blog_post).permit(:title, :author, :blog_entry, :user_id)
     end
 end
