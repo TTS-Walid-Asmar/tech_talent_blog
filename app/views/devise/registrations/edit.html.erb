@@ -3,12 +3,20 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
   
-  <div class="form-group">
-    <%= f.text_field :username, autofocus: true, class:"form-control half-width", placeholder: "Username"  %> 
+    <div class="form-group">
+    <%= f.text_field :name, autofocus: true, class:"form-control", placeholder: "First & Last Name"  %> 
+  </div>
+  
+    <div class="form-group">
+    <strong>Your Birthday: </strong><%= f.date_field :birthday, class:"form-control"  %> 
   </div>
   
   <div class="form-group">
-    <%= f.email_field :email, class:"form-control half-width", placeholder: "Your Email"  %> 
+    <%= f.text_field :username, class:"form-control", placeholder: "Username"  %> 
+  </div>
+  
+  <div class="form-group">
+    <%= f.email_field :email, class:"form-control", placeholder: "Your Email"  %> 
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -17,17 +25,17 @@
 
   <div class="form-group">
     <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off", placeholder: "Leave blank if you don't want to change it", class:"form-control half-width" %>
+    <%= f.password_field :password, autocomplete: "off", placeholder: "Your New Password", class:"form-control" %>
   </div>
 
   <div class="form-group">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "One more time please", class:"form-control half-width" %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "One more time please", class:"form-control" %>
   </div>
 
   <div class="form-group">
     <%= f.label :current_password %><br />
-    <%= f.password_field :current_password, autocomplete: "off", placeholder:"Type your current password to save your changes!", class:"form-control half-width" %>
+    <%= f.password_field :current_password, autocomplete: "off", placeholder:"Type your current password to save your changes!", class:"form-control" %>
   </div>
 
   <div class="actions">
